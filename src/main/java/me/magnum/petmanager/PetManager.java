@@ -2,14 +2,17 @@ package me.magnum.petmanager;
 
 import co.aikar.commands.BukkitCommandManager;
 import fr.minuskube.inv.InventoryManager;
+import fr.minuskube.inv.SmartInventory;
 import fr.minuskube.inv.SmartInvsPlugin;
+import jdk.nashorn.internal.objects.annotations.Getter;
+import me.kangarko.ui.UIDesignerAPI;
+import me.magnum.lib.Common;
 import me.magnum.petmanager.commands.MenuCommand;
 import me.magnum.petmanager.listeners.ClickPet;
 import me.magnum.petmanager.util.Settings;
 import me.magnum.petmanager.util.SimpleConfig;
 import org.bukkit.permissions.Permission;
 import org.bukkit.plugin.java.JavaPlugin;
-import org.mineacademy.fo.Common;
 
 import java.util.UUID;
 
@@ -28,6 +31,7 @@ public class PetManager extends JavaPlugin {
 	@Override
 	public void onEnable () {
 		instance = this;
+		Common.setInstance(instance);
 		Common.log("Checking for config file...");
 		cfg = new SimpleConfig("config.yml");
 		pre = cfg.getString("pets.prefix");

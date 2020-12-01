@@ -36,13 +36,12 @@ dependencies {
     compileOnly paper()
 //    compileOnly "org.spigotmc:spigot-api:1.14.2-R0.1-SNAPSHOT"
 //    compile 'com.github.kangarko:UIDesigner:1.1.6'
-    compile 'fr.minuskube.inv:smart-invs:1.2.7'
+    compile 'fr.minuskube.inv:smart-invs:1.2.6'
 
     compile "co.aikar:acf-bukkit:0.5.0-SNAPSHOT"
 //    implementation 'me.magnum.lib:CommonLibrary:1.0.3-SNAPSHOT'
 //    implementation 'com.github.kangarko:Remain:3.2.0'
-    implementation 'org.mineacademy:Foundation:5.7.5'
-    implementation 'com.github.javafactorydev:lightningstorage:3.2.0'
+    implementation 'com.github.javafactorydev:lightningstorage:3.1.8'
 }
 
 tasks.prepareSpigotPlugins.dependsOn shadowJar
