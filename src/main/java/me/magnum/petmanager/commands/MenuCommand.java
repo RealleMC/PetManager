@@ -4,7 +4,7 @@ import co.aikar.commands.BaseCommand;
 import co.aikar.commands.annotation.CatchUnknown;
 import co.aikar.commands.annotation.CommandAlias;
 import co.aikar.commands.annotation.Default;
-import me.magnum.lib.Common;
+import com.reallemc.Common;
 import me.magnum.petmanager.menus.SmartMain;
 import me.magnum.petmanager.util.CheckSender;
 import org.bukkit.command.CommandSender;
@@ -24,7 +24,7 @@ public class MenuCommand extends BaseCommand {
         if (CheckSender.isCommand(sender)) {
             return;
         }
-        Common.tell(sender, pre + "&aTest successful.");
+        Common.tell((Player) sender, pre + "&aTest successful.");
         if (CheckSender.isPlayer(sender)) {
             Player p = (Player) sender;
             SmartMain.MAIN.open(p);

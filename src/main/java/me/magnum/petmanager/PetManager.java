@@ -1,12 +1,9 @@
 package me.magnum.petmanager;
 
-import co.aikar.commands.BukkitCommandManager;
+import co.aikar.commands.PaperCommandManager;
+import com.reallemc.Common;
 import fr.minuskube.inv.InventoryManager;
-import fr.minuskube.inv.SmartInventory;
 import fr.minuskube.inv.SmartInvsPlugin;
-import jdk.nashorn.internal.objects.annotations.Getter;
-import me.kangarko.ui.UIDesignerAPI;
-import me.magnum.lib.Common;
 import me.magnum.petmanager.commands.MenuCommand;
 import me.magnum.petmanager.listeners.ClickPet;
 import me.magnum.petmanager.util.Settings;
@@ -31,7 +28,6 @@ public class PetManager extends JavaPlugin {
 	@Override
 	public void onEnable () {
 		instance = this;
-		Common.setInstance(instance);
 		Common.log("Checking for config file...");
 		cfg = new SimpleConfig("config.yml");
 		pre = cfg.getString("pets.prefix");
@@ -47,7 +43,7 @@ public class PetManager extends JavaPlugin {
 	}
 	
 	private void registerCommand () {
-		BukkitCommandManager CM = new BukkitCommandManager(instance);
+		PaperCommandManager CM = new PaperCommandManager(instance);
 		CM.registerCommand(new MenuCommand());
 	}
 	

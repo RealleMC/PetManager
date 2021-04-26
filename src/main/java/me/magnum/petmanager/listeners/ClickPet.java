@@ -1,7 +1,7 @@
 package me.magnum.petmanager.listeners;
 
 
-import me.magnum.lib.Common;
+import com.reallemc.Common;
 import me.magnum.petmanager.PetManager;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
@@ -12,7 +12,6 @@ import org.bukkit.entity.Tameable;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerInteractEntityEvent;
-import org.bukkit.inventory.EquipmentSlot;
 
 import java.util.UUID;
 
@@ -27,7 +26,7 @@ public class ClickPet implements Listener {
 		String pre = "&9[&6PetManager&9] ";
 		Player player = pie.getPlayer();
 		Entity target = pie.getRightClicked();
-		Material hand = player.getInventory().getItemInMainHand().getType();
+		Material hand = player.getInventory().getItemInHand().getType();
 		Material tool = Material.BONE;
 		Material stick = Material.STICK;
 		String pet;
@@ -39,9 +38,9 @@ public class ClickPet implements Listener {
 		String isAdmin = "petmanager.admin";
 		if (!(hand.equals(tool)||hand.equals(stick)))
 			return;
-		if (pie.getHand() != EquipmentSlot.HAND) {
-			return;
-		}
+//		if (pie.getHand() != EquipmentSlot.HAND) {
+//			return;
+//		}
 		if (!name.equals("Magnum1997")) {
 			if (!player.hasPermission(isAdmin)) {
 				               Common.tell(player, pre + "&eYou need to be Magnum or have " + isadmin + " permission to so that.");
@@ -95,7 +94,10 @@ public class ClickPet implements Listener {
 		}
 		if (hand == stick) {
 			pie.setCancelled(true);
-			Common.tell(player, pre + "&fPlayer UUID:&e " + oid, pre + "&fEntity UUID:&e " + eid);
+			Common.tell(player,pre+"&FPlayer UUID: &E"+oid
+			);
+			Common.tell(player, pre + "&fPlayer UUID:&e " + oid);
+			Common.tell(player,pre + "&fEntity UUID:&e " + eid);
 		}
 		pie.setCancelled(true);
 	}

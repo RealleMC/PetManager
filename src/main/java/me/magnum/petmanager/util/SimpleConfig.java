@@ -11,7 +11,7 @@ import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 
-import me.magnum.lib.Common;
+import com.reallemc.Common;
 import me.magnum.petmanager.PetManager;
 import org.apache.commons.lang.StringUtils;
 import org.bukkit.configuration.file.YamlConfiguration;
