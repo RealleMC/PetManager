@@ -9,7 +9,7 @@ plugins {
     id 'com.github.johnrengelman.shadow' version '6.0.0'
 }
 
-group = 'me.magnum.petmanager'
+group = 'com.reallemc'
 version = '1.0.0-SNAPSHOT'
 archivesBaseName = 'PetManager'
 //mainClassName = 'me.magnum.petmanager.PetManager'
@@ -17,14 +17,14 @@ targetCompatibility = 1.8
 sourceCompatibility = 1.8
 
 repositories {
-    mavenLocal()
-    paper()
+//    mavenCentral()
+//    mavenLocal()
+//    paper()
     maven { url = 'https://hub.spigotmc.org/nexus/content/repositories/snapshots/' }
-    jitpack()
-    maven { url = 'https://repo.aikar.co/content/groups/aikar/' }
-    mavenCentral()
 
-    maven {url = 'http://repo.maven.apache.org/maven2' }
+    maven { url = 'https://repo.aikar.co/content/groups/aikar/' }
+    maven { url = 'https://repo.maven.apache.org/maven2' }
+    maven { url = 'https://jitpack.io' }
 }
 compileJava {
     options.compilerArgs += ["-parameters"]
@@ -32,18 +32,14 @@ compileJava {
     options.forkOptions.executable = 'javac'
 }
 
+
 dependencies {
-    compileOnly paper()
-//    compileOnly "org.spigotmc:spigot-api:1.14.2-R0.1-SNAPSHOT"
-//    compile 'com.github.kangarko:UIDesigner:1.1.6'
-    compile 'fr.minuskube.inv:smart-invs:1.2.6'
-
-    compile "co.aikar:acf-bukkit:0.5.0-SNAPSHOT"
-//    implementation 'me.magnum.lib:CommonLibrary:1.0.3-SNAPSHOT'
-//    implementation 'com.github.kangarko:Remain:3.2.0'
-    implementation 'com.github.javafactorydev:lightningstorage:3.1.8'
+//    compileOnly paper()
+    compileOnly 'com.reallemc:Core:master-SNAPSHOT'
+    implementation 'fr.minuskube.inv:smart-invs:1.2.6'
+    implementation "co.aikar:acf-paper:0.5.0-SNAPSHOT"
+    implementation 'com.github.Magnum97:SimplixStorage:3.2.2'
 }
-
 tasks.prepareSpigotPlugins.dependsOn shadowJar
 //tasks.shadowJar.dependsOn tasks.relocateShadowJar
 task relocateShadowJar(type: ConfigureShadowRelocation) {
@@ -60,7 +56,7 @@ shadowJar {
     relocate 'co.aikar.commands', 'me.magnum.petmanager.acf'
     relocate 'fr.minuskube.inv:smart-invs:1.2.6;', 'me.magnum.petmanager.inv'
     //noinspection GrDeprecatedAPIUsage
-    classifier = null // remove -all from end of jar
+//    classifier = null // remove -all from end of jar
 }
 
 build.dependsOn shadowJar
