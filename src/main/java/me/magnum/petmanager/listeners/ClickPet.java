@@ -26,7 +26,7 @@ public class ClickPet implements Listener {
 		String pre = "&9[&6PetManager&9] ";
 		Player player = pie.getPlayer();
 		Entity target = pie.getRightClicked();
-		Material hand = player.getInventory().getItemInHand().getType();
+		Material hand = player.getInventory().getItemInMainHand().getType();
 		Material tool = Material.BONE;
 		Material stick = Material.STICK;
 		String pet;
