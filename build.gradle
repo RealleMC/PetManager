@@ -34,8 +34,8 @@ repositories {
 }
 dependencies {
     compileOnly 'com.reallemc:core:0.0.1'
-//    implementation 'com.github.kangarko:Foundation:5.11.0'
-    implementation 'org.mineacademy:Foundation:5.11.0'
+    implementation 'com.github.kangarko:Foundation:5.8.0'
+//    implementation 'org.mineacademy:Foundation:5.11.0'
     implementation 'com.github.simplix-softworks:simplixstorage:3.2.3'
     implementation 'co.aikar:idb-core:1.0.0-SNAPSHOT'
     implementation 'co.aikar:acf-paper:0.5.0-SNAPSHOT'
