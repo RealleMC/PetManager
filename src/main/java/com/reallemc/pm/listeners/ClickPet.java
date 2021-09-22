@@ -1,8 +1,8 @@
-package me.magnum.petmanager.listeners;
+package com.reallemc.pm.listeners;
 
 
 import com.reallemc.Common;
-import me.magnum.petmanager.PetManager;
+import com.reallemc.pm.PetManager;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.entity.Entity;

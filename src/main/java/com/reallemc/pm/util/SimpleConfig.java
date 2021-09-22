@@ -1,4 +1,4 @@
-package me.magnum.petmanager.util;
+package com.reallemc.pm.util;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
@@ -12,7 +12,7 @@ import java.util.Objects;
 import java.util.Set;
 
 import com.reallemc.Common;
-import me.magnum.petmanager.PetManager;
+import com.reallemc.pm.PetManager;
 import org.apache.commons.lang.StringUtils;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;

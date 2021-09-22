@@ -1,11 +1,11 @@
-package me.magnum.petmanager.menus;
+package com.reallemc.pm.menus;
 
 import com.reallemc.ItemFactory;
 import fr.minuskube.inv.ClickableItem;
 import fr.minuskube.inv.SmartInventory;
 import fr.minuskube.inv.content.InventoryContents;
 import fr.minuskube.inv.content.InventoryProvider;
-import me.magnum.petmanager.PetManager;
+import com.reallemc.pm.PetManager;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 

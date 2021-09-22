@@ -1,4 +1,4 @@
-package me.magnum.petmanager.util;
+package com.reallemc.pm.util;
 
 import org.bukkit.block.CommandBlock;
 import org.bukkit.command.CommandSender;

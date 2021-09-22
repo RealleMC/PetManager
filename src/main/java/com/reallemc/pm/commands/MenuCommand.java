@@ -1,4 +1,4 @@
-package me.magnum.petmanager.commands;
+package com.reallemc.pm.commands;
 
 import co.aikar.commands.BaseCommand;
 import co.aikar.commands.annotation.CatchUnknown;
@@ -7,13 +7,13 @@ import co.aikar.commands.annotation.Default;
 import co.aikar.commands.annotation.Subcommand;
 import com.reallemc.Common;
 import me.magnum.petmanager.CacheManager;
-import me.magnum.petmanager.menus.SmartMain;
-import me.magnum.petmanager.util.CheckSender;
+import com.reallemc.pm.menus.SmartMain;
+import com.reallemc.pm.util.CheckSender;
 import net.kyori.adventure.text.Component;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-import static me.magnum.petmanager.PetManager.pre;
+import static com.reallemc.pm.PetManager.pre;
 
 @CommandAlias("petman")
 public class MenuCommand extends BaseCommand {

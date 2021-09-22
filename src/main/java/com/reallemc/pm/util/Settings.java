@@ -1,4 +1,4 @@
-package me.magnum.petmanager.util;
+package com.reallemc.pm.util;
 
 public class Settings extends SimpleConfig {
 	

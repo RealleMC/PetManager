@@ -1,13 +1,13 @@
-package me.magnum.petmanager;
+package com.reallemc.pm;
 
 import co.aikar.commands.PaperCommandManager;
 import com.reallemc.Common;
+import com.reallemc.pm.commands.MenuCommand;
+import com.reallemc.pm.listeners.ClickPet;
+import com.reallemc.pm.util.Settings;
+import com.reallemc.pm.util.SimpleConfig;
 import fr.minuskube.inv.InventoryManager;
 import fr.minuskube.inv.SmartInvsPlugin;
-import me.magnum.petmanager.commands.MenuCommand;
-import me.magnum.petmanager.listeners.ClickPet;
-import me.magnum.petmanager.util.Settings;
-import me.magnum.petmanager.util.SimpleConfig;
 import org.bukkit.permissions.Permission;
 import org.bukkit.plugin.java.JavaPlugin;
 

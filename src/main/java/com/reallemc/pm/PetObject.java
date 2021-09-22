@@ -1,6 +1,5 @@
-package me.magnum.petmanager;
+package com.reallemc.pm;
 
-import org.bukkit.Bukkit;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
 

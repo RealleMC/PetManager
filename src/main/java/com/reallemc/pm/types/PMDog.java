@@ -1,4 +1,4 @@
-package me.magnum.petmanager.types;
+package com.reallemc.pm.types;
 
 import org.bukkit.permissions.Permission;
 
