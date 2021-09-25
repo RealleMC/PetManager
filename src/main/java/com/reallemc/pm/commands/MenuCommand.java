@@ -6,14 +6,12 @@ import co.aikar.commands.annotation.CommandAlias;
 import co.aikar.commands.annotation.Default;
 import co.aikar.commands.annotation.Subcommand;
 import com.reallemc.Common;
-import me.magnum.petmanager.CacheManager;
+import com.reallemc.PetManager;
 import com.reallemc.pm.menus.SmartMain;
-import com.reallemc.pm.util.CheckSender;
+import com.reallemc.util.CheckSender;
 import net.kyori.adventure.text.Component;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
-
-import static com.reallemc.pm.PetManager.pre;
 
 @CommandAlias("petman")
 public class MenuCommand extends BaseCommand {
@@ -21,14 +19,14 @@ public class MenuCommand extends BaseCommand {
     public MenuCommand() {
     }
 
-    @Subcommand("showcache")
+    /*@Subcommand("showcache")
     public void onShow(CommandSender sender) {
         for (Object cachedPlayer : CacheManager.getPLAYER_CACHE().keySet()) {
             Player player = (Player) cachedPlayer;
             Component message = Component.text(player.getName());
             sender.sendMessage(message);
         }
-    }
+    }*/
 
     @Default
     @CatchUnknown
@@ -36,7 +34,7 @@ public class MenuCommand extends BaseCommand {
         if (CheckSender.isCommand(sender)) {
             return;
         }
-        Common.tell((Player) sender, pre + "&aTest successful.");
+        Common.tell((Player) sender, PetManager.pre + "&aTest successful.");
         if (CheckSender.isPlayer(sender)) {
             Player p = (Player) sender;
             SmartMain.MAIN.open(p);

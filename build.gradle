@@ -22,7 +22,7 @@ import com.github.jengelman.gradle.plugins.shadow.tasks.ConfigureShadowRelocatio
 
 plugins {
     id 'java'
-    id "io.freefair.lombok" version "5.3.0"
+    id "io.freefair.lombok" version "5.3.3.3"
     id 'kr.entree.spigradle' version '2.1.1'
     id 'com.github.johnrengelman.shadow' version '6.0.0'
 }
@@ -34,15 +34,16 @@ repositories {
 }
 dependencies {
     compileOnly 'com.reallemc:core:0.0.1'
-    implementation 'com.github.kangarko:Foundation:5.8.0'
-//    implementation 'org.mineacademy:Foundation:5.11.0'
+//    implementation 'com.github.kangarko:Foundation:5.11.0'
+    compileOnly 'org.mineacademy:Foundation:5.11.0'
     implementation 'com.github.simplix-softworks:simplixstorage:3.2.3'
     implementation 'co.aikar:idb-core:1.0.0-SNAPSHOT'
+    implementation 'com.zaxxer:HikariCP:2.4.1'
     implementation 'co.aikar:acf-paper:0.5.0-SNAPSHOT'
     implementation 'fr.minuskube.inv:smart-invs:1.2.6'
 }
 
-group = 'com.reallemc.pm'
+group = 'com.reallemc'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = "15"
 
@@ -51,6 +52,10 @@ spigot {
     apiVersion = '1.15'
     main = 'com.reallemc.PetManager'
     depends = ['RealleCore']
+    //noinspection GroovyAssignabilityCheck
+    debug {
+        buildVersion = "1.16.5"
+    }
 }
 
 tasks.prepareSpigotPlugins.dependsOn shadowJar
@@ -65,11 +70,13 @@ shadowJar {
     minimize()
 //    version = null
 }
+/*
 compileJava {
     options.compilerArgs += ["-parameters"]
     options.fork = true
     options.forkOptions.executable = 'javac'
 }
+*/
 tasks.withType(JavaCompile) {
     options.encoding = 'UTF-8'
 }

@@ -1,4 +1,4 @@
-package com.reallemc.pm;
+package com.reallemc;
 
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;

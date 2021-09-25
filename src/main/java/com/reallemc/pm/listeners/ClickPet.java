@@ -2,7 +2,7 @@ package com.reallemc.pm.listeners;
 
 
 import com.reallemc.Common;
-import com.reallemc.pm.PetManager;
+import com.reallemc.PetManager;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.entity.Entity;

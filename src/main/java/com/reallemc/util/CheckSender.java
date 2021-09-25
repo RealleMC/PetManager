@@ -1,4 +1,4 @@
-package com.reallemc.pm.util;
+package com.reallemc.util;
 
 import org.bukkit.block.CommandBlock;
 import org.bukkit.command.CommandSender;

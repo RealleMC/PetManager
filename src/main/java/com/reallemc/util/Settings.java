@@ -1,4 +1,4 @@
-package com.reallemc.pm.util;
+package com.reallemc.util;
 
 public class Settings extends SimpleConfig {
 	

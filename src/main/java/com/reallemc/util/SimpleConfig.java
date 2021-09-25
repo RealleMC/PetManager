@@ -1,4 +1,4 @@
-package com.reallemc.pm.util;
+package com.reallemc.util;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
@@ -12,7 +12,7 @@ import java.util.Objects;
 import java.util.Set;
 
 import com.reallemc.Common;
-import com.reallemc.pm.PetManager;
+import com.reallemc.PetManager;
 import org.apache.commons.lang.StringUtils;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
