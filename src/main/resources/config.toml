@@ -1,0 +1,11 @@
+[pets]
+prefix = "&9[ &6PetManager &9] "
+
+[sql]
+use = false
+host = "localhost"
+port = 3306
+user = "petmanager"
+password = "secureDBpassword"
+database = "petman"
+prefix = "&f[ &bSQL &f] "

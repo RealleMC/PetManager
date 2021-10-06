@@ -33,9 +33,9 @@ repositories {
     mavenLocal()
 }
 dependencies {
-    compileOnly 'com.reallemc:core:0.0.1'
+    compileOnly 'com.reallemc:core:0.1.1-SNAPSHOT'
 //    implementation 'com.github.kangarko:Foundation:5.11.0'
-    compileOnly 'org.mineacademy:Foundation:5.11.0'
+    compileOnly 'com.github.kangarko:Foundation:5.11.0'
     implementation 'com.github.simplix-softworks:simplixstorage:3.2.3'
     implementation 'co.aikar:idb-core:1.0.0-SNAPSHOT'
     implementation 'com.zaxxer:HikariCP:2.4.1'

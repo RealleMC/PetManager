@@ -4,14 +4,12 @@ import co.aikar.commands.BaseCommand;
 import co.aikar.commands.annotation.CatchUnknown;
 import co.aikar.commands.annotation.CommandAlias;
 import co.aikar.commands.annotation.Default;
-import co.aikar.commands.annotation.Subcommand;
-import com.reallemc.Common;
 import com.reallemc.PetManager;
 import com.reallemc.pm.menus.SmartMain;
 import com.reallemc.util.CheckSender;
-import net.kyori.adventure.text.Component;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+import org.mineacademy.fo.Common;
 
 @CommandAlias("petman")
 public class MenuCommand extends BaseCommand {

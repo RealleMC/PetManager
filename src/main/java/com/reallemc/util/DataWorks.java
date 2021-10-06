@@ -16,14 +16,29 @@ import java.util.UUID;
 
 public class DataWorks {
 
-//    private final PetManager plugin;
-
     public DataWorks(PetManager plugin) {
-//        this.plugin = plugin;
-        DatabaseOptions options = DatabaseOptions.builder().sqlite(plugin.getDataFolder() + File.separator + "pets.db").build();
+        if (PetManager.getToml().getBoolean("sql.use"))
+            setupSQL();
+        else setupSQLite();
+        init();
+    }
+
+    private void setupSQL() {
+        int port = PetManager.getToml().getInt("sql.port");
+        String host = PetManager.getToml().getString("sql.host")+":"+port;
+        String user = PetManager.getToml().getString("sql.user");
+        String password = PetManager.getToml().getString("sql.password");
+        String database = PetManager.getToml().getString("sql.database");
+
+        DatabaseOptions options = DatabaseOptions.builder().mysql(user, password, database, host).build();
         Database db = PooledDatabaseOptions.builder().options(options).createHikariDatabase();
         DB.setGlobalDatabase(db);
-        init();
+    }
+
+    private void setupSQLite() {
+        DatabaseOptions options = DatabaseOptions.builder().sqlite(PetManager.getInstance().getDataFolder() + File.separator + "pets.db").build();
+        Database db = PooledDatabaseOptions.builder().options(options).createHikariDatabase();
+        DB.setGlobalDatabase(db);
     }
 
     public void init() {

@@ -5,33 +5,27 @@ import com.reallemc.pm.commands.MenuCommand;
 import com.reallemc.pm.listeners.ClickPet;
 import com.reallemc.util.DataWorks;
 import com.reallemc.util.Settings;
-import com.reallemc.util.SimpleConfig;
+import de.leonhard.storage.Toml;
 import fr.minuskube.inv.InventoryManager;
 import fr.minuskube.inv.SmartInvsPlugin;
-import org.bukkit.permissions.Permission;
 import org.bukkit.plugin.java.JavaPlugin;
-
-import java.util.UUID;
+import org.mineacademy.fo.Common;
 
 
 public class PetManager extends JavaPlugin {
 
     private static PetManager instance;
-    private SimpleConfig cfg;
-
-
+    private static Toml toml;
     public static InventoryManager inventoryManager;
     public static String pre;
-    //    public final Permission<ClickPet> clickPetPermission;
-    public UUID ownerid, petid;
-    public Permission perm;
 
     @Override
     public void onEnable() {
         instance = this;
         Common.log("Checking for config file...");
-        cfg = new SimpleConfig("config.yml");
-        pre = cfg.getString("pets.prefix");
+        toml = new Toml("config", getDataFolder().toString());
+        pre = toml.getString("pets.prefix");
+        Common.setLogPrefix(pre);
         Common.log("Loading Settings...");
         Settings.init();
         Common.log("Registering commands...");
@@ -53,7 +47,7 @@ public class PetManager extends JavaPlugin {
     public void onDisable() {
         Common.log("Cleaning up Memory...");
         pre = null;
-        cfg = null;
+        toml = null;
         instance = null;
         Common.log("Disabled");
     }
@@ -62,8 +56,8 @@ public class PetManager extends JavaPlugin {
         return instance;
     }
 
-    public SimpleConfig getCfg() {
-        return cfg;
+    public static Toml getToml() {
+        return toml;
     }
 
     public static String getPre() {

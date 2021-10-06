@@ -6,7 +6,6 @@ import com.google.common.cache.LoadingCache;
 import com.reallemc.util.DataWorks;
 import lombok.Getter;
 import org.bukkit.OfflinePlayer;
-import org.bukkit.entity.Entity;
 
 import java.util.HashSet;
 import java.util.UUID;
