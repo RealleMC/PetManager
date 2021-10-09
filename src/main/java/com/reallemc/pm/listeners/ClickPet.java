@@ -1,7 +1,6 @@
 package com.reallemc.pm.listeners;
 
 
-import com.reallemc.Common;
 import com.reallemc.PetManager;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
@@ -12,6 +11,7 @@ import org.bukkit.entity.Tameable;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerInteractEntityEvent;
+import org.mineacademy.fo.Common;
 
 import java.util.UUID;
 
